@@ -1,12 +1,44 @@
---07.Valores de un Query a variables
+--Declarar e inicializar las siguientes variables:
+--• Número de camisetas a vender
+--• Monto de camisetas
 
-set serveroutput on;
+--Calcular:
+--Sub total a pagar = ( Numero de camisetas * Monto de camisetas )
+--Calcular el 15% de impuesto sobre ventas
+--Total a pagar = SubTotal + Impuesto Sobre ventas.
+
+set serverouput on;
+
 DECLARE
-
+  IMPUESTOS CONSTANT NUMBER:= .15;
+  
+  numeroCamisetas NUMBER;
+  valorCamiseta NUMBER;
+  subtotal NUMBER;
+  impuestoValor NUMBER;
+  
 BEGIN
 
- dbms_output.put_line('====================================');
+numeroCamisetas := 18;
+valorCamiseta := 12550.234;
+subtotal :=numeroCamisetas * valorCamiseta;
+impuestoValor := subtotal * IMPUESTOS;
 
-dbms_output.put_line('====================================');
+DBMS_OUTPUT.PUT_LINE('======================================================================');
+DBMS_OUTPUT.PUT_LINE('');
+DBMS_OUTPUT.PUT_LINE(RPAD(LPAD('VENTA CAMISETAS', 36),70));
+DBMS_OUTPUT.PUT_LINE(RPAD('Producto', 20) || LPAD('Cantidad | ', 15) || LPAD('Valor Unidad | ', 15) || LPAD('Valor Producto | ', 20) );
+DBMS_OUTPUT.PUT_LINE(RPAD('Camiseta', 20) || LPAD(numeroCamisetas, 12)  ||' | '|| LPAD(valorCamiseta, 12)  ||' | '|| LPAD(subtotal, 17) ||' | ' );
+DBMS_OUTPUT.PUT_LINE(RPAD('Camiseta', 20) || LPAD(numeroCamisetas, 12)  ||' | '|| LPAD(valorCamiseta, 12)  ||' | '|| LPAD(subtotal, 17) ||' | ' );
+DBMS_OUTPUT.PUT_LINE(RPAD('Camiseta', 20) || LPAD(numeroCamisetas, 12)  ||' | '|| LPAD(valorCamiseta, 12)  ||' | '|| LPAD(subtotal, 17) ||' | ' );
+DBMS_OUTPUT.PUT_LINE('');
+DBMS_OUTPUT.PUT_LINE(LPAD('Subtotal:',48) || LPAD(ROUND(subtotal,2), 20));
+DBMS_OUTPUT.PUT_LINE(LPAD('Impuestos:', 48) || LPAD(ROUND(impuestoValor, 2), 20));
+DBMS_OUTPUT.PUT_LINE(LPAD('Total:', 48) || LPAD(ROUND(subtotal + impuestoValor, 2), 20));
+DBMS_OUTPUT.PUT_LINE('');
+
+DBMS_OUTPUT.PUT_LINE('======================================================================');
+
+
 END;
 /
