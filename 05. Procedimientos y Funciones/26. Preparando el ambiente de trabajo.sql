@@ -1,12 +1,5 @@
 --26. Preparando el ambiente de trabajo
+--cargar los datos de archivo 26.1
 
-set serveroutput on;
-DECLARE
+SELECT COUNT(*) FROM EMPLEADOS;
 
-BEGIN
-
- dbms_output.put_line('====================================');
-
-dbms_output.put_line('====================================');
-END;
-/

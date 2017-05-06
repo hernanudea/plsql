@@ -1,12 +1,14 @@
---27. Función Básica
+--28. Funciones con parámetros de entrada
 
-set serveroutput on;
-DECLARE
+CREATE OR REPLACE FUNCTION mayor_entre(x in NUMBER, y in NUMBER)
+RETURN NUMBER
+IS
 
 BEGIN
-
- dbms_output.put_line('====================================');
-
-dbms_output.put_line('====================================');
+  IF(x>y) THEN
+    RETURN x;
+  ELSE
+    RETURN y;
+  END IF;
 END;
 /

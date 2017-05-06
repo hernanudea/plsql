@@ -1,12 +1,12 @@
 --27. Función Básica
 
-set serveroutput on;
-DECLARE
+CREATE OR REPLACE FUNCTION total_empleados
+RETURN NUMBER
+IS
+totalEmpleados NUMBER := 0;
 
 BEGIN
-
- dbms_output.put_line('====================================');
-
-dbms_output.put_line('====================================');
+  SELECT COUNT(*) INTO totalEmpleados FROM empleados;
+  RETURN totalEmpleados;
 END;
 /

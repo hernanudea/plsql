@@ -1,12 +1,19 @@
 --29.  Función- Cálculo de edad actual
 
-set serveroutput on;
-DECLARE
+CREATE OR REPLACE FUNCTION edad_actual (fechaNacimiento IN DATE)
+RETURN NUMBER
+IS
+edad NUMBER(3) := 0;
 
 BEGIN
 
- dbms_output.put_line('====================================');
+edad := TRUNC((TO_NUMBER(TO_CHAR(SYSDATE, 'YYYYMMDD'))- TO_NUMBER(TO_CHAR(fechaNacimiento, 'YYYYMMDD')))/10000);
+RETURN edad;
 
-dbms_output.put_line('====================================');
+EXCEPTION
+WHEN OTHERS then
+edad := 3;
+RETURN edad;
+
 END;
 /
