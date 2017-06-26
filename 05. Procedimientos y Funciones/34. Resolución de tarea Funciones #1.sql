@@ -1,12 +1,13 @@
---34. ResoluciÃ³n de tarea Funciones #1
+--34. Resolución de tarea Funciones #1
 
-set serveroutput on;
-DECLARE
+CREATE OR REPLACE FUNCTION promedio_notas(n1 NUMBER, n2 NUMBER, n3 NUMBER, n4 NUMBER)
+RETURN NUMBER
+IS
+promedio NUMBER :=0;
 
 BEGIN
-
- dbms_output.put_line('====================================');
-
-dbms_output.put_line('====================================');
+  promedio := (n1 + n2 + n3 + n4)/4;
+  RETURN promedio;
 END;
 /
+  

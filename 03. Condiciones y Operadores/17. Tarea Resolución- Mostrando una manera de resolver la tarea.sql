@@ -15,7 +15,7 @@ CASE
   WHEN salario <= 1400 THEN
     nuevoSalario := salario * 1.1;
   WHEN salario >= 1401 THEN
-    nuevoSalario := salario * 1.15;
+    nuevoSalario := salario * 1.05;
   END CASE;
     
   dbms_output.put_line('====================================');

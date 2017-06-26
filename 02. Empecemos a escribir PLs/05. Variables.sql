@@ -10,14 +10,14 @@ DECLARE
 
 BEGIN
   nombreEmpleado:='Hernan Velasquez';
-  activo:= false;
+  activo:= true;
   fecha:= '31-12-2015';
   
   dbms_output.put_line('====================================');
   dbms_output.put_line('Nombre: '|| nombreEmpleado);
   dbms_output.put_line('Salario: '|| salario);
   dbms_output.put_line('Fecha: '|| fecha);
-  dbms_output.put_line('Activo: '|| case when activo then 'SI'else 'NO' end);
+  dbms_output.put_line('Activo: '|| case when activo then 'SI' else 'NO' end);
   dbms_output.put_line('====================================');
 END;
 /

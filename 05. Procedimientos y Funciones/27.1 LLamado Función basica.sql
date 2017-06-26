@@ -5,7 +5,7 @@ empleados NUMBER;
 
 BEGIN
   empleados := total_empleados;
-  DBMS_OUTPUT.PUT_LINE(empleados);
+  DBMS_OUTPUT.PUT_LINE('Total Empleados: ' || empleados);
 END;
 /
 

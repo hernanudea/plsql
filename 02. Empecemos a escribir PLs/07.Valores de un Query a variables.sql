@@ -13,7 +13,7 @@ BEGIN
   */
   
   SELECT USER, COUNT(*) INTO usuario, cantidadRegistros FROM dual; 
-  --primero la seleccion sql y luego las variables en el mismo oden
+  --primero la seleccion sql y luego las variables en el mismo orden
   
   dbms_output.put_line('====================================');
   DBMS_OUTPUT.PUT_LINE('Usuario: '|| usuario);

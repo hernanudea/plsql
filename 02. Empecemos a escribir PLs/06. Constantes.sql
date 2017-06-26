@@ -3,6 +3,7 @@
 --primero las constantes, luego las variables
 
 DECLARE
+  --constantes
   PI CONSTANT NUMBER:= 3.1416; --se deben inicialziar en la declaración
   
   --variables
@@ -10,7 +11,7 @@ DECLARE
   radio NUMBER;
 BEGIN
   radio:= 7;
-  area:= PI*(radio*radio);
+  area:= PI*(power(radio, 2));
   dbms_output.put_line('========================================');
   DBMS_OUTPUT.PUT_LINE('Area: ' || round(area, 2) || ' cm^2');
   dbms_output.put_line('========================================');

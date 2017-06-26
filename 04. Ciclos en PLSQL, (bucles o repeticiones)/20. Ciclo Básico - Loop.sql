@@ -9,9 +9,9 @@ BEGIN
   
   LOOP <<LoopSimple>>
     dbms_output.put_line(x);
-    X:=X+10;
+    X := X + 10;
     
-    if(x > 1000) THEN
+    if(x > 100) THEN
       exit;
     END IF;
   

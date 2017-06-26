@@ -8,7 +8,7 @@ nota NUMBER := 68;
 
 BEGIN
 
-  --IF(nota=69 or nota = 68) THEN
+  --IF(nota=69 OR nota = 68) THEN
   if(nota BETWEEN 67 AND 69) THEN
     nota:= 70;
   END IF;

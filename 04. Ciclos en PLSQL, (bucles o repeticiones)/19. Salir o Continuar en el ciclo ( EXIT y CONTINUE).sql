@@ -8,10 +8,11 @@ BEGIN
 
   dbms_output.put_line('====================================');
   dbms_output.put_line('Imprimir la tabla del ' || numero);
-  <<ciclo_tabla_nmero>>
+
+  <<ciclo_tabla_numero>>
   FOR i IN 1..10 LOOP
   
-  IF (i=5) THEN
+  IF (i=6) THEN
     CONTINUE;
   END IF;
   --exit => sale dl ciclo
@@ -29,7 +30,7 @@ BEGIN
   dbms_output.put(numero);
   dbms_output.put(' = ');
   dbms_output.put_line(i*numero);
-  END LOOP ciclo_tabla_nmero;
+  END LOOP ciclo_tabla_numero;
 
   dbms_output.put_line('====================================');
 END;
